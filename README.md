@@ -65,45 +65,34 @@ ping 8.8.8.8
    - If this fails, troubleshoot general network connectivity before continuing.
 
 2.) Test DNS resolution.
+   - Attempt to access a website by name (e.g., www.google.com).
+   - If the site fails to load but IP-based pings succeed, the issue is likely DNS-related.
 
-Attempt to access a website by name (e.g., www.google.com
-).
-
-If the site fails to load but IP-based pings succeed, the issue is likely DNS-related.
-
-3.) Use nslookup to test DNS functionality.
-
-Open Command Prompt and run:
-
+3.) Use nslookup to test DNS functionality. Open Command Prompt and run:
+```bash
 nslookup www.google.com
+```
 
+   - If the command fails or times out, DNS resolution is not functioning properly.
 
-If the command fails or times out, DNS resolution is not functioning properly.
-
-4.) Flush the DNS cache.
-
-Open Command Prompt as administrator and run:
-
+4.) Flush the DNS cache. Open Command Prompt as administrator and run:
+```bash
 ipconfig /flushdns
-
-
+```
 This clears cached or corrupted DNS entries.
 
-5.) Renew the IP address.
-
-Run the following commands:
-
+5.) Renew the IP address. Run the following commands:
+```bash
 ipconfig /release
+```
+```bash
 ipconfig /renew
-
-
+```
 This refreshes network configuration and DNS server assignments.
 
 6.) Check DNS server settings.
-
-Open the network adapter’s IPv4 settings.
-
-Ensure Obtain DNS server address automatically is selected, or verify that correct DNS servers are entered.
+   - Open the network adapter’s IPv4 settings.
+   - Ensure Obtain DNS server address automatically is selected, or verify that correct DNS servers are entered.
 
 Common public DNS servers include:
 
