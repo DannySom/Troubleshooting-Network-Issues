@@ -6,6 +6,34 @@
 <h1>Network Connectivity</h1>
 This is a quick and simple repository to reference whenever you come across network issues in the real world. It will cover the most common issues you may encounter in classrooms, offices, workplaces, etc.
 
+<h2>🌐 Limited Connectivity</h2>
+
+Possible Causes or Root Issues:
+Common causes include incorrect IP configurations, network hardware issues, or a disruption in the communication path. Identifying where the connection is failing is key to resolving the problem.
+<ins>Fixes:</ins>
+
+1.) Check for an APIPA address by going into the command prompt and typing `ipconfig.` If you see 169.254.x.x, then you will need to resolve that by going to the next issue which goes deep into resolving APIPA.
+   - An APIPA address occurs when a device cannot obtain an IP address from the DHCP server, resulting in a self-assigned address in the range of 169.254.x.x.
+
+2.) Ping your Local Gateway (e.g., ping 192.168.1.1)
+   - Pinging the local gateway tests connectivity to the first hop on the network, which is usually the router. If the ping fails, the issue is likely with your connection to the router.
+   - If it is an issue with the connection to your router, check things such as a faulty cable, a disabled network adapter, Wi-Fi configuration issues, or a malfunctioning router port.
+
+```bash
+ping [gateway IP]
+```
+
+3.) Ping a public DNS server and ping a domain name.
+   - If pinging the public IP works but the domain fails, the issue may lie with DNS settings. Reconfigure DNS to use a public server like Google DNS
+```bash
+ping 8.8.8.8
+```
+```bash
+ping www.google.com
+```
+
+
+4.) Restart network devices.
 
 <h2>🌐 APIPA / No Valid IP Address (169.254.x.x)</h2>
 
@@ -41,7 +69,7 @@ ipconfig /renew
    - Update or reinstall the network adapter driver if necessary.
 
 
-6.) To Vvrify DHCP is enabled, open the network adapter’s IPv4 settings and confirm that Obtain an IP address automatically is selected.
+6.) To Verify DHCP is enabled, open the network adapter’s IPv4 settings and confirm that Obtain an IP address automatically is selected.
    - Press ```Win + R``` and type ```ncpa.cpl```
    - Right-click your active network adapter and select properties
    - Double-click Internet Protocol Version 4 and ensure that "Obtain an IP address automatically" is enabled
@@ -111,45 +139,6 @@ Power cycle the modem and router to refresh DNS services.
 Some security software may block DNS traffic.
 
 Re-enable protection after testing.
-
-<h2>🌐 Limited Connectivity</h2>
-
-Possible Causes or Root Issues:
-Common causes include incorrect IP configurations, network hardware issues, or a disruption in the communication path. Identifying where the connection is failing is key to resolving the problem.
-<ins>Fixes:</ins>
-
-1.) Check for an APIPA address by going into the command prompt and typing `ipconfig.` If you see 169.254.x.x, then you will need to resolve that by going to the next issue which goes deep into resolving APIPA.
-   - An APIPA address occurs when a device cannot obtain an IP address from the DHCP server, resulting in a self-assigned address in the range of 169.254.x.x.
-
-2.) Ping your Local Gateway (e.g., ping 192.168.1.1)
-   - Pinging the local gateway tests connectivity to the first hop on the network, which is usually the router. If the ping fails, the issue is likely with your connection to the router.
-
-```bash
-ping [gateway IP]
-```
-
-3.) Ping a public DNS server and ping a domain name.
-   - If pinging the public IP works but the domain fails, the issue may lie with DNS settings. Reconfigure DNS to use a public server like Google DNS
-```bash
-ping 8.8.8.8
-```
-```bash
-ping www.google.com
-```
-
-
-4.) Restart network devices.
-
-
-5.) Check the network adapter status.
-   - Open Device Manager and ensure the network adapter is enabled.
-   - Update or reinstall the network adapter driver if necessary.
-
-
-6.) To Vvrify DHCP is enabled, open the network adapter’s IPv4 settings and confirm that Obtain an IP address automatically is selected.
-   - Press ```Win + R``` and type ```ncpa.cpl```
-   - Right-click your active network adapter and select properties
-   - Double-click Internet Protocol Version 4 and ensure that "Obtain an IP address automatically" is enabled
 
 
 7.) If the issue persists, test the connection on another device.
