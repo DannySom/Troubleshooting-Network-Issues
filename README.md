@@ -4,7 +4,7 @@
 </p>
 
 <h1>Network Connectivity</h1>
-This is a quick and simple repository to reference whenever you come across network issues in the real world. It will cover the most common issues you may encounter in classrooms, offices, workplaces, etc.
+This is a quick and simple repository to reference whenever you come across network issues in the real world or IT business environment.
 
 <h2>🌐 Limited Connectivity</h2>
 
